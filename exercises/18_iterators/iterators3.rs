@@ -10,10 +10,10 @@ enum DivisionError {
 
 fn divide(a: i64, b: i64) -> Result<i64, DivisionError> {
     match (a, b) {
-        ( _, 0) => Err(DivisionError::DivideByZero),
-        ( i64::MIN, -1 ) => Err(DivisionError::IntegerOverflow),
-        _ if a % b != 0 => Err(DivisionError::NotDivisible),
-        _ => Ok(a/b),
+        (_, 0) => Err(DivisionError::DivideByZero),
+        (i64::MIN, -1) => Err(DivisionError::IntegerOverflow),
+        (a, b) if a % b > 0 => Err(DivisionError::NotDivisible),
+        (a, b) => Ok(a/b),
     }
 }
 

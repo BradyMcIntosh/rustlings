@@ -10,9 +10,9 @@ struct PositiveNonzeroInteger(u64);
 impl PositiveNonzeroInteger {
     fn new(value: i64) -> Result<Self, CreationError> {
         match value {
-            x if x < 0 => Err(CreationError::Negative),
+            i64::MIN..0 => Err(CreationError::Negative),
             0 => Err(CreationError::Zero),
-            _ => Ok(Self(value as u64))
+            1..=i64::MAX => Ok(Self(value as u64)),
         }
     }
 }

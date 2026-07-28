@@ -4,9 +4,9 @@
 // `hour_of_day` is higher than 23.
 fn maybe_ice_cream(hour_of_day: u16) -> Option<u16> {
     match hour_of_day {
-        x if (..22).contains(&x) => Some(5),
-        x if (22..24).contains(&x) => Some(0),
-        _ => None,
+        0..=21 => Some(5),
+        22..=23 => Some(0),
+        24..=u16::MAX => None,
     }
 }
 

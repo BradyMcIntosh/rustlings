@@ -9,7 +9,7 @@ enum Message {
     Resize{ width: u32, height: u32 },
     Move(Point),
     Echo(String),
-    ChangeColor(i32, i32, i32),
+    ChangeColor( u8, u8, u8 ),
     Quit,
 }
 

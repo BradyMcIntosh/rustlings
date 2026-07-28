@@ -8,9 +8,12 @@
 // - However, if Mary buys more than 40 apples, the price of each apple in the
 // entire order is reduced to only 1 rustbuck!
 
-fn calculate_price_of_apples(num: u32) -> u32 {
-    let p = if num < 41 { 2 } else { 1 };
-    num * p
+fn calculate_price_of_apples(num: i32) -> i32 {
+    if num > 40 {
+        num
+    } else {
+        num * 2
+    }
 }
 
 fn main() {

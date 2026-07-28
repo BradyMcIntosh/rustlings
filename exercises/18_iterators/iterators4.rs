@@ -1,8 +1,5 @@
 fn factorial(num: u64) -> u64 {
-    match num {
-        0 => 1,
-        _ => (1..num).rfold(num, |a, b| a * b),
-    }
+    (1..=num).product()
 }
 
 fn main() {
